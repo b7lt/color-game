@@ -17,32 +17,32 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey("left") && speed >  -maxSpeed)
+        if (Input.GetKey(KeyCode.LeftArrow) && speed >  -maxSpeed)
 		{
-            speed = speed - acceleration * Time.deltaTime;
+            speed = speed - (acceleration + 1) * Time.deltaTime;
 		}
-        else if (Input.GetKey("right") && speed < maxSpeed)
+        else if (Input.GetKey(KeyCode.RightArrow) && speed < maxSpeed)
 		{
-            speed = speed + acceleration * Time.deltaTime;
+            speed = speed + (acceleration + 1)* Time.deltaTime;
 		}
 		else
 		{
             if (speed > deceleration * Time.deltaTime)
 			{
-                speed = speed - deceleration * Time.deltaTime;
+                speed = speed - (deceleration + 1)* Time.deltaTime;
 			}
             else if (speed<-deceleration * Time.deltaTime)
 			{
-                speed = speed + deceleration * Time.deltaTime;
+                speed = speed + (deceleration + 1) * Time.deltaTime;
 			}
 			else
 			{
                 speed = 0;
 			}
 		}
-
+        speed = Mathf.Lerp(speed, -maxSpeed, maxSpeed);
         transform.position = new Vector2 (transform.position.x + speed * Time.deltaTime, transform.position.y);
     }
 
