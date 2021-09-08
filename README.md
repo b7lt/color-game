@@ -1,5 +1,6 @@
-# color-game
-color game poggers
+# Color Game (Title WIP)
+
+Color Game Poggers.
 
 # Concept
 
