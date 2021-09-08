@@ -2,7 +2,7 @@
 
 Color Game Poggers.
 
-# Concept
+## Concept
 
 - World starts pitch black, character is white
 - Throughout the world, there are powerups you can pick up. These powersup change the color of your aura and the background, the world changes theme with the complementary color of your aura. Different color = different powerup. 
@@ -24,7 +24,7 @@ Infinite scrolling mode:
 - Maybe all colors gone = death, have death traps as well as obstacles
 - We can def incorporate more than two colors per stage here, if you get more than two then it would just boost the size/shape/vibrancy-of-color of your current aura and maybe make your powerup more powerful 
 
-# Powerups
+## Powerups
 
 color wipes out after each stage
 stage 1: red
