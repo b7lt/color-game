@@ -31,17 +31,17 @@ stage 2: yellow, then red which makes orange
 stage 3: blue, then yellow which makes green
 stage 4: red, then blue which makes purple
 stage 5: all colors rainbow
-----
+
 (p) = primary color, basic ability
 (c) = complementary color, combined abilities
----
+
 (p)red: dash
 (p)yellow: double jump
 (c)orange: dash/double jump = hyper movement abilities
 (b)blue: slow time
 (c)green: ?
 (c)purple: blink forward in time, tp maybe
----
+
 rainbow final stage:
 - slow time excluding player
 - blink forward in any direction
