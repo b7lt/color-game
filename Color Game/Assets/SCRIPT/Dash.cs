@@ -19,19 +19,19 @@ public class Dash : MonoBehaviour
 		Debug.Log(direction);
 		if(direction == 0)
 		{
-			if (Input.GetKeyDown(KeyCode.LeftArrow))
+			if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.LeftShift))
 			{
 				direction = 1;
 			}
-			else if (Input.GetKeyDown(KeyCode.RightArrow))
+			else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.LeftShift))
 			{
 				direction = 2;
 			}
-			else if (Input.GetKeyDown(KeyCode.UpArrow))
+			else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.LeftShift))
 			{
 				direction = 3;
 			}
-			else if (Input.GetKeyDown(KeyCode.DownArrow))
+			else if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.LeftShift))
 			{
 				direction = 4;
 			}

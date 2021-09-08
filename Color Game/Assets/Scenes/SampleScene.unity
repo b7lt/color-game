@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 567105924}
   - component: {fileID: 567105923}
   - component: {fileID: 567105925}
+  - component: {fileID: 567105926}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -384,9 +385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  maxSpeed: 2
-  acceleration: 5
-  deceleration: 5
+  maxSpeed: 4
+  acceleration: 50
+  deceleration: 50
 --- !u!114 &567105925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +401,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
+--- !u!114 &567105926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567105919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e0c8272942bb34b8381e5213351f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDashTime: 0.1
+  dashSpeed: 50
 --- !u!1 &863278174
 GameObject:
   m_ObjectHideFlags: 0
