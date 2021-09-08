@@ -22,3 +22,29 @@ Infinite scrolling mode:
 - Obstacles can get remove a color from your aura
 - Maybe all colors gone = death, have death traps as well as obstacles
 - We can def incorporate more than two colors per stage here, if you get more than two then it would just boost the size/shape/vibrancy-of-color of your current aura and maybe make your powerup more powerful 
+
+# Powerups
+
+color wipes out after each stage
+stage 1: red
+stage 2: yellow, then red which makes orange
+stage 3: blue, then yellow which makes green
+stage 4: red, then blue which makes purple
+stage 5: all colors rainbow
+----
+(p) = primary color, basic ability
+(c) = complementary color, combined abilities
+---
+(p)red: dash
+(p)yellow: double jump
+(c)orange: dash/double jump = hyper movement abilities
+(b)blue: slow time
+(c)green: ?
+(c)purple: blink forward in time, tp maybe
+---
+rainbow final stage:
+- slow time excluding player
+- blink forward in any direction
+- greatly enhanced movement
+- unique design maybe like wings
+need to think of unique stuff to have for the final fight in this stage
