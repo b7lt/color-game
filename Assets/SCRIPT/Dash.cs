@@ -9,12 +9,14 @@ public class Dash : MonoBehaviour
 	public float startDashTime;
 	private int direction;
 	public float dashSpeed;
-	public int counter = 2;
+	public int counter;
+	public int maxDash = 2;
 	public int waitTime = 3;
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		dashTime = startDashTime;
+		counter = maxDash;
 	}
 	private void Update()
     {
@@ -24,15 +26,16 @@ public class Dash : MonoBehaviour
 		
     }
 	
-	
+	//collision set counter to maxDash
 	private void OnCollisionStay2D(Collision2D collision)
 	{
 		if (collision.gameObject.layer == 8)
 		{
-			counter = 2;
+			counter = maxDash;
 		}
 	}
 
+	//dashes towards arrow directions
 	private void dashing()
 	{
 		if (direction == 0)
