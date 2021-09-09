@@ -5,11 +5,14 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed = 0f;
+    //max speed
     public float maxSpeed = 4f;
+    //faster # = faster acceleration / same for deceleration 
     public float acceleration = 30f;
     public float deceleration = 50f;
     SpriteRenderer sr;
-    public Animator animator;
+    [SerializeField]
+    Animator animator;
    // Start is called before the first frame update
     void Awake()
     {
@@ -20,6 +23,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //movement
         if (Input.GetKey("left") && speed >  -maxSpeed)
 		{
             speed = speed - acceleration * Time.deltaTime;
@@ -42,13 +47,15 @@ public class Movement : MonoBehaviour
 			{
                 speed = 0;
 			}
-		}
 
+
+		}
         transform.position = new Vector2 (transform.position.x + speed * Time.deltaTime, transform.position.y);
         animator.SetFloat("Speed", Mathf.Abs(speed));
         FlipPlayer();
     }
 
+    //flip character
     void FlipPlayer()
     {
         float xMovement = Input.GetAxisRaw("Horizontal");

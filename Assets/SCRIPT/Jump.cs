@@ -5,7 +5,8 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-    public float thrust = 100f;
+    //height
+    public float thrust = 5f;
     private bool isGrounded = false;
     // Start is called before the first frame update
     void Awake()
