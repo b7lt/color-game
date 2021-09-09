@@ -6,14 +6,15 @@ public class Movement : MonoBehaviour
 {
     public float speed = 0f;
     public float maxSpeed = 4f;
-    public float acceleration = 5f;
-    public float deceleration = 5f;
+    public float acceleration = 30f;
+    public float deceleration = 50f;
     SpriteRenderer sr;
-
+    public Animator animator;
    // Start is called before the first frame update
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -44,6 +45,8 @@ public class Movement : MonoBehaviour
 		}
 
         transform.position = new Vector2 (transform.position.x + speed * Time.deltaTime, transform.position.y);
+        animator.SetFloat("Speed", Mathf.Abs(speed));
+        FlipPlayer();
     }
 
     void FlipPlayer()

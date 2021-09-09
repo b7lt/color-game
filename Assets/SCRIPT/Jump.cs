@@ -29,7 +29,7 @@ public class Jump : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.name == "floor")
+		if (collision.gameObject.layer == 8)
 		{
             isGrounded = true;
 		}
