@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 567105925}
   - component: {fileID: 567105926}
   - component: {fileID: 567105927}
+  - component: {fileID: 567105928}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -394,8 +395,6 @@ MonoBehaviour:
   maxSpeed: 4
   acceleration: 50
   deceleration: 50
-  animator: {fileID: 567105927}
-  dust: {fileID: 713355947}
 --- !u!114 &567105925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
+  isGrounded: 0
 --- !u!114 &567105926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +445,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &567105928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567105919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42128a89e344b30428fff0391ce191af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &713355944
 GameObject:
   m_ObjectHideFlags: 0

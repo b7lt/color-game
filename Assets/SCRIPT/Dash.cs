@@ -5,9 +5,11 @@ using UnityEngine;
 public class Dash : MonoBehaviour
 {
     private Rigidbody2D rb;
+
 	private float dashTime;
-	public float startDashTime;
 	private int direction;
+
+	public float startDashTime;
 	public float dashSpeed;
 	public int counter;
 	public int maxDash = 2;

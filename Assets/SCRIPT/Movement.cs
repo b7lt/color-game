@@ -10,34 +10,30 @@ public class Movement : MonoBehaviour
     //faster # = faster acceleration / same for deceleration 
     public float acceleration = 30f;
     public float deceleration = 50f;
-    private bool isGrounded = false;
+
     SpriteRenderer sr;
-    [SerializeField]
     Animator animator;
-    public ParticleSystem dust;
     Rigidbody2D rb;
    // Start is called before the first frame update
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
 
     }
 
     // Update is called once per frame
-    [System.Obsolete]
-    void Update()
+    void FixedUpdate()
     {
         //movement
         if (Input.GetKey("left") && speed > -maxSpeed)
 		{
             speed = speed - acceleration * Time.deltaTime;
-            dust.Play();
         }
         else if (Input.GetKey("right") && speed < maxSpeed)
 		{
             speed = speed + acceleration * Time.deltaTime;
-            dust.Play();
         }
 		else
 		{
@@ -54,7 +50,7 @@ public class Movement : MonoBehaviour
 			else
 			{
                 speed = 0;
-                dust.Stop();
+
 			}
 		}
         
@@ -80,13 +76,5 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //Plays the dust animation upon the method being called.
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            isGrounded = true;
-        }
-    }
 }

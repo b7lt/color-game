@@ -5,13 +5,17 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    Animator animator;
     //height
     public float thrust = 5f;
-    private bool isGrounded = false;
+    public bool isGrounded = false;
+
     // Start is called before the first frame update
     void Awake()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
+
     }
 
     
@@ -22,9 +26,8 @@ public class Jump : MonoBehaviour
         {
             rb2D.AddForce(transform.up * thrust, ForceMode2D.Impulse);
 
-            
+            animator.SetTrigger("jumped");
             isGrounded = false;
-            
         }
 	}
 
