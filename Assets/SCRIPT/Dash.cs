@@ -20,8 +20,7 @@ public class Dash : MonoBehaviour
 	}
 	private void Update()
     {
-		Debug.Log(counter);
-		dashing();
+        dashing();
 
 		
     }
