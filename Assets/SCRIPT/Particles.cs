@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Particles : MonoBehaviour
 {
-    ParticleSystem dust;
+    ParticleSystem[] particles;
     Movement movementScript;
     Jump jumpScript;
     Rigidbody2D rb;
+    bool jumped;
     // Start is called before the first frame update
     void Start()
     {
-        dust = GetComponentInChildren<ParticleSystem>();
+        particles = gameObject.GetComponentsInChildren<ParticleSystem>();
         movementScript = gameObject.GetComponent<Movement>();
         jumpScript = gameObject.GetComponent<Jump>();
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -20,16 +21,30 @@ public class Particles : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         if ( movementScript.speed != 0 && jumpScript.isGrounded)
 		{
-            dust.Play();
+            particles[0].Play();
             Debug.Log("work");
 		}
 
 		else
 		{
-            dust.Stop();
+            particles[0].Stop();
 
+        }
+        if(jumpScript.isGrounded == false)
+        {
+            if (jumped == false)
+            {
+                particles[1].Play();
+                jumped = true;
+            }
+            
+        }
+        else
+        {
+            jumped = false;
         }
     }
 
