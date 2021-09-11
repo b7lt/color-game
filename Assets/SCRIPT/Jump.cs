@@ -20,16 +20,31 @@ public class Jump : MonoBehaviour
 
     
 
-	private void FixedUpdate()
+	private void Update()
 	{
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        /*       if (Input.GetKey(KeyCode.Space) && isGrounded)
+        *       {
+        *           rb2D.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+        *
+        *           animator.SetTrigger("jumped");
+        *           isGrounded = false;
+               }*/
+        Jumping();
+    }
+
+    public bool Jumping()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb2D.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            Debug.Log("jumping");
 
             animator.SetTrigger("jumped");
             isGrounded = false;
+            return true;
         }
-	}
+        return false;
+    }
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

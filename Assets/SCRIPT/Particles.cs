@@ -22,7 +22,7 @@ public class Particles : MonoBehaviour
     void FixedUpdate()
     {
         
-        if ( movementScript.speed != 0 && jumpScript.isGrounded)
+        if ( movementScript.speed != 0 && jumpScript.Jumping())
 		{
             particles[0].Play();
             Debug.Log("work");
