@@ -39,7 +39,7 @@ public class Particles : MonoBehaviour
 
         if (jumpScript.isGrounded == false)
         {
-            if (jumped == false)
+            if (jumped == false && rb.velocity.y > 0)
             {
                 particles[1].Play();
                 jumped = true;
