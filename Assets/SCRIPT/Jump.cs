@@ -30,6 +30,7 @@ public class Jump : MonoBehaviour
         *           isGrounded = false;
                }*/
         Jumping();
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     public bool Jumping()
@@ -37,7 +38,6 @@ public class Jump : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb2D.AddForce(transform.up * thrust, ForceMode2D.Impulse);
-            Debug.Log("jumping");
 
             animator.SetTrigger("jumped");
             isGrounded = false;
@@ -51,6 +51,7 @@ public class Jump : MonoBehaviour
 		if (collision.gameObject.layer == 8)
 		{
             isGrounded = true;
+
 		}
 	}
 }

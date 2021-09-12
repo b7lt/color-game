@@ -21,19 +21,23 @@ public class Particles : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        if ( movementScript.speed != 0 && jumpScript.Jumping())
+     
+
+        if (!jumped && !particles[0].isPlaying)
 		{
             particles[0].Play();
-            Debug.Log("work");
-		}
-
-		else
-		{
-            particles[0].Stop();
+            Debug.Log("playing");
 
         }
-        if(jumpScript.isGrounded == false)
+        if (jumped || movementScript.speed == 0)
+		{
+            particles[0].Stop();
+            Debug.Log("stop");
+
+        }
+
+
+        if (jumpScript.isGrounded == false)
         {
             if (jumped == false)
             {
@@ -46,6 +50,8 @@ public class Particles : MonoBehaviour
         {
             jumped = false;
         }
+
+
     }
 
 
